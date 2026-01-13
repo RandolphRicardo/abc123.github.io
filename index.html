@@ -54,6 +54,9 @@
             .download-button {
                 @apply bg-primary text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center gap-2;
             }
+            .backup-download-link {
+                @apply text-sm text-secondary hover:underline mt-2 text-center block;
+            }
         }
     </style>
 </head>
@@ -85,7 +88,7 @@
                 </div>
             </div>
 
-            <!-- 向日葵远程下载卡片（补充示例链接） -->
+            <!-- 向日葵远程下载卡片（已优化：jsDelivr CDN 加速 + 官方备用直链） -->
             <div class="download-card">
                 <div class="card-content">
                     <div class="card-top">
@@ -94,11 +97,16 @@
                         </div>
                         <h2 class="download-title">向日葵远程</h2>
                         <p class="download-description">简单易用的远程控制解决方案</p>
-                        <p class="download-info">版本：v1.2.1 | 大小：约 21MB</p>
+                        <p class="download-info">版本：v1.2.1.61234 | 大小：约 21MB</p>
                     </div>
-                    <a href="./downloads/SunloginSOS_1.2.1.61234_Win32.exe" class="download-button w-full" download>
+                    <!-- 主下载：jsDelivr CDN 加速（基于 abc123/abc123.github.io） -->
+                    <a href="https://cdn.jsdelivr.net/gh/abc123/abc123.github.io/downloads/SunloginSOS_1.2.1.61234_Win32.exe" class="download-button w-full" download>
                         <i class="fa fa-download"></i>
-                        <span>立即下载</span>
+                        <span>立即下载（加速版）</span>
+                    </a>
+                    <!-- 备用下载：向日葵官方直链（防止 CDN 故障） -->
+                    <a href="https://dl-cdn.oray.com/sunlogin/sos/SunloginSOS_1.2.1.61234_Win32.exe" class="backup-download-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fa fa-external-link"></i> 官方直链下载（备用）
                     </a>
                 </div>
             </div>
@@ -111,10 +119,10 @@
                             <i class="fa fa-globe"></i>
                         </div>
                         <h2 class="download-title">连连控</h2>
-                        <p class="download-description">适用于港澳台或境外地区</p>
+                        <p class="download-description">适用于港澳台或境外地区的远程控制工具</p>
                         <p class="download-info">版本：v4.0.34.1 | 大小：约 24MB</p>
                     </div>
-                    <a href="https://dl.asklink.com/windows/AskLink_Full_v4.0.34.1_20251227_1412.exe" class="download-button w-full" target="_blank">
+                    <a href="https://dl.asklink.com/windows/AskLink_Full_v4.0.34.1_20251227_1412.exe" class="download-button w-full" target="_blank" rel="noopener noreferrer">
                         <i class="fa fa-download"></i>
                         <span>立即下载</span>
                     </a>
@@ -132,6 +140,7 @@
                 <li>下载完成后，运行安装程序并按照提示进行安装（.bat 文件可直接双击运行，无需安装）</li>
                 <li>安装/运行完成后，打开软件并获取远程连接码，提供给技术人员建立远程连接</li>
                 <li>.bat 格式文件为批处理脚本，若被杀毒软件拦截，可选择「信任并保留」（仅在确认本站点来源安全时运行）</li>
+                <li>向日葵提供「加速版」和「官方版」两种下载渠道，加速版下载更快，官方版为备用（适用于加速版无法下载时）</li>
                 <li>如需帮助，请联系你的技术支持人员</li>
             </ul>
         </div>
@@ -140,7 +149,7 @@
     <script>
         // 为所有下载链接添加点击事件跟踪
         document.addEventListener('DOMContentLoaded', function() {
-            const downloadLinks = document.querySelectorAll('.download-button');
+            const downloadLinks = document.querySelectorAll('.download-button, .backup-download-link');
             
             downloadLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -152,4 +161,3 @@
     </script>
 </body>
 </html>
-
