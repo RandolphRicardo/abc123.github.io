@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件分类导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f5f7fa;
+        }
+
+        /* 左侧菜单样式 */
+        .left-menu {
+            width: 220px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            overflow-y: auto;
+        }
+
+        .menu-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 0 20px 20px;
+            border-bottom: 1px solid #34495e;
+            margin-bottom: 10px;
+        }
+
+        .menu-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #34495e;
+        }
+
+        .menu-item.active {
+            background-color: #1abc9c;
+        }
+
+        /* 右侧内容区域样式 */
+        .right-content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .content-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 10px;
+        }
+
+        .software-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .software-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .software-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .software-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .software-desc {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+
+        .version-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 8px;
+        }
+
+        .version-item {
+            padding: 6px 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #34495e;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .version-item:hover {
+            background-color: #e3f2fd;
+            border-color: #2196f3;
+            color: #2196f3;
+        }
+
+        .empty-content {
+            text-align: center;
+            padding: 50px;
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .left-menu {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .menu-list {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .menu-item {
+                flex: 1 0 auto;
+                text-align: center;
+            }
+            .software-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 左侧菜单区域 -->
+    <div class="left-menu">
+        <div class="menu-title">软件分类导航</div>
+        <div class="menu-list">
+            <div class="menu-item active" data-category="office">办公软件</div>
+            <div class="menu-item" data-category="programming">编程软件</div>
+            <div class="menu-item" data-category="electronic-drawing">电子绘图</div>
+            <div class="menu-item" data-category="mechanical-design">机械设计</div>
+            <div class="menu-item" data-category="architectural-design">建筑设计</div>
+            <div class="menu-item" data-category="science">理科软件</div>
+            <div class="menu-item" data-category="graphic-design">平面设计</div>
+            <div class="menu-item" data-category="interior-exterior">室内外设计</div>
+            <div class="menu-item" data-category="data-analysis">数据分析</div>
+            <div class="menu-item" data-category="web-design">网页设计</div>
+            <div class="menu-item" data-category="virtual-machine">虚拟机</div>
+            <div class="menu-item" data-category="video-animation">影视动画</div>
+        </div>
+    </div>
+
+    <!-- 右侧内容区域 -->
+    <div class="right-content">
+        <div id="content-container">
+            <!-- 办公软件内容 -->
+            <div id="office-content" class="category-content">
+                <h2 class="content-title">办公软件</h2>
+                <div class="software-list">
+                    <!-- Acrobat 带版本列表 -->
+                    <div class="software-item">
+                        <div class="software-name">Acrobat</div>
+                        <div class="software-desc">PDF编辑与处理工具</div>
+                        <div class="version-list">
+                            <!-- 添加跳转链接，新窗口打开 -->
+                            <a href="acrobat-xi.html" target="_blank" class="version-item">Acrobat XI</a>
+                            <a href="acrobat-8.html" target="_blank" class="version-item">Acrobat 8</a>
+                            <div class="version-item">Acrobat 9</div>
+                            <div class="version-item">Acrobat DC</div>
+                            <div class="version-item">DC2019</div>
+                            <div class="version-item">DC2020</div>
+                            <div class="version-item">DC2021</div>
+                            <div class="version-item">DC2022</div>
+                            <div class="version-item">DC2023</div>
+                            <div class="version-item">DC2024</div>
+                            <div class="version-item">DC2025</div>
+                        </div>
+                    </div>
+                    
+                    <div class="software-item">
+                        <div class="software-name">Office</div>
+                        <div class="software-desc">Word/Excel/PPT等办公套件</div>
+                    </div>
+                    
+                    <div class="software-item">
+                        <div class="software-name">PDF工具</div>
+                        <div class="software-desc">各类PDF转换/压缩/编辑工具</div>
+                    </div>
+                    
+                    <div class="software-item">
+                        <div class="software-name">Project</div>
+                        <div class="software-desc">项目管理与进度规划工具</div>
+                    </div>
+                    
+                    <div class="software-item">
+                        <div class="software-name">Visio</div>
+                        <div class="software-desc">流程图与示意图绘制工具</div>
+                    </div>
+                    
+                    <div class="software-item">
+                        <div class="software-name">解压缩软件</div>
+                        <div class="software-desc">ZIP/RAR等压缩文件管理工具</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 其他类目默认空内容（可后续补充） -->
+            <div id="programming-content" class="category-content" style="display: none;">
+                <h2 class="content-title">编程软件</h2>
+                <div class="empty-content">该分类下的软件信息正在整理中...</div>
+            </div>
+
+            <div id="electronic-drawing-content" class="category-content" style="display: none;">
+                <h2 class="content-title">电子绘图</h2>
+                <div class="empty-content">该分类下的软件信息正在整理中...</div>
+            </div>
+
+            <div id="mechanical-design-content" class="category-content" style="display: none;">
+                <h2 class="content-title">机械设计</h2>
+                <div class="empty-content">该分类下的软件信息正在整理中...</div>
+            </div>
+
+            <div id="architectural-design-content" class="category-content" style="display: none;">
+                <h2 class="content-title">建筑设计</h2>
+                <div class="empty-content">该分类下的软件信息正在整理中...</div>
+            </div>
+
+            <div id="science-content" class="category-content" style="display: none;">
+                <h2 class="content-title">理科软件</h2>
+                <div class="empty-content">该分类下的软件信息正在整理中...</div>
+            </div>
+
+            <div id="graphic-design-content" class="category-content" style="display: none;">
+                <h2 class="content-title">平面设计</h2>
+                <div class="empty-content">该分类下的软件信息正在整理中...</div>
+            </div>
+
+            <div id="interior-exterior-content" class="category-content" style="display: none;">
+                <h2 class="content-title">室内外设计</h2>
+                <div class="empty-content">该分类下的软件信息正在整理中...</div>
+            </div>
+
+            <div id="data-analysis-content" class="category-content" style="display: none;">
+                <h2 class="content-title">数据分析</h2>
+                <div class="empty-content">该分类下的软件信息正在整理中...</div>
+            </div>
+
+            <div id="web-design-content" class="category-content" style="display: none;">
+                <h2 class="content-title">网页设计</h2>
+                <div class="empty-content">该分类下的软件信息正在整理中...</div>
+            </div>
+
+            <div id="virtual-machine-content" class="category-content" style="display: none;">
+                <h2 class="content-title">虚拟机</h2>
+                <div class="empty-content">该分类下的软件信息正在整理中...</div>
+            </div>
+
+            <div id="video-animation-content" class="category-content" style="display: none;">
+                <h2 class="content-title">影视动画</h2>
+                <div class="empty-content">该分类下的软件信息正在整理中...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 获取所有菜单项和内容区域
+        const menuItems = document.querySelectorAll('.menu-item');
+        const contentAreas = document.querySelectorAll('.category-content');
+
+        // 为每个菜单项添加点击事件
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // 移除所有菜单项的active类
+                menuItems.forEach(menu => menu.classList.remove('active'));
+                // 为当前点击的菜单项添加active类
+                this.classList.add('active');
+                
+                // 获取当前分类标识
+                const category = this.getAttribute('data-category');
+                
+                // 隐藏所有内容区域
+                contentAreas.forEach(content => content.style.display = 'none');
+                // 显示对应分类的内容区域
+                document.getElementById(`${category}-content`).style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
