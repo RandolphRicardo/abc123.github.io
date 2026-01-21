@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UG10.0软件下载及安装教程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #1abc9c;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #1abc9c;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .section-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* 安装须知列表样式 */
+        .install-notice {
+            list-style: none;
+        }
+
+        .install-notice li {
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+
+        .install-notice li:last-child {
+            border-bottom: none;
+        }
+
+        .notice-label {
+            display: inline-block;
+            width: 120px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .notice-value {
+            color: #666;
+        }
+
+        /* 安装教程步骤样式 */
+        .install-step {
+            display: flex;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+
+        .install-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: #1abc9c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .step-img {
+            max-width: 100%;
+            max-height: 400px; /* 限制图片最大高度 */
+            border-radius: 6px;
+            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            object-fit: contain; /* 保持图片比例 */
+        }
+
+        .disclaimer {
+            background-color: #fff5f5;
+            border-left-color: #e53e3e;
+            padding: 25px;
+        }
+
+        .disclaimer-content {
+            color: #742a2a;
+            line-height: 2;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            .section-title {
+                font-size: 18px;
+            }
+            .section-content {
+                font-size: 14px;
+            }
+            .notice-label {
+                width: 100px;
+                display: block;
+                margin-bottom: 5px;
+            }
+            .install-step {
+                flex-direction: column;
+            }
+            .step-number {
+                margin-bottom: 10px;
+            }
+            .step-img {
+                max-height: 300px; /* 移动端缩小图片高度 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>UG10.0软件下载及安装教程</h1>
+
+        <!-- 软件简介板块 -->
+        <div class="section">
+            <div class="section-title">一、软件简介</div>
+            <div class="section-content">
+                UG是面向制造行业的CAID/CAD/CAE/CAM三维参数化软件,是当今最先进,最流行的工业设计软件之一.它集合了概念设计.工程设计,分析与加工制造的功能,实现了优化设计与产品生产过程的组合。被广泛应用于机械、汽车、航空航天、家电以及化工等各个行业。
+            </div>
+        </div>
+
+        <!-- 安装须知板块 -->
+        <div class="section">
+            <div class="section-title">二、安装须知</div>
+            <div class="section-content">
+                <ul class="install-notice">
+                    <li>
+                        <span class="notice-label">[软件名称]：</span>
+                        <span class="notice-value">Siemens NX10.0</span>
+                    </li>
+                    <li>
+                        <span class="notice-label">[软件大小]：</span>
+                        <span class="notice-value">2.6GB</span>
+                    </li>
+                    <li>
+                        <span class="notice-label">[软件语言]：</span>
+                        <span class="notice-value">中文简体</span>
+                    </li>
+                    <li>
+                        <span class="notice-label">[安装环境]：</span>
+                        <span class="notice-value">Win7及以上版本</span>
+                    </li>
+                    <li>
+                        <span class="notice-label">[百度网盘]：</span>
+                        <span class="notice-value">---------</span>
+                    </li>
+                    <li>
+                        <span class="notice-label">[不限速下载]：</span>
+                        <span class="notice-value">公众号内回复：Acrobat</span>
+                    </li>
+                    <li>
+                        <span class="notice-label">[注意事项]：</span>
+                        <span class="notice-value">安装前请关闭杀毒软件（360，金山毒霸，腾讯管家），否则易安装失败。</span>
+                    </li>
+                    <li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 安装教程板块 -->
+        <div class="section">
+            <div class="section-title">三、安装教程</div>
+            <div class="section-content">
+                <div class="install-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">鼠标右键解压到"UG10.0"</div>
+                        <img src="step1.png" alt="解压到"UG10.0" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">找到并打开解压出来后的UG10.0文件夹"</div>
+                        <img src="step2.png" alt="找到并打开解压出来后的UG10.0文件夹" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">复制“ProgramData“文件夹到C盘根目录内，一定是此路径，不能其他路径</div>
+                        <img src="step3.png" alt="复制“ProgramData“文件夹到C盘根目录内，一定是此路径，不能其他路径" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">打开“n×100”文件夹后，在里面找到“steup”应用程序。双击开始安装</div>
+                        <img src="step4.png" alt="打开“n×100”文件夹后，在里面找到“steup”应用程序。双击开始安装" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <div class="step-title">点击确定</div>
+                        <img src="step5.png" alt="点击确定" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <div class="step-title">点击下一步</div>
+                        <img src="step6.png" alt="点击下一步" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <div class="step-title">点击下一步</div>
+                        <img src="step7.png" alt="点击下一步" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">8</div>
+                    <div class="step-content">
+                        <div class="step-title">点击更改选择安装路径，切记不能出现中文，否则安装好了也打不开！</div>
+                        <img src="step8.png" alt="点击更改选择安装路径，切记不能出现中文，否则安装好了也打不开！" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">9</div>
+                    <div class="step-content">
+                        <div class="step-title">双击打开“XK”记事本文件，然后复制里面的全部内容，接着在输入服务器名或许可证文件内黏贴此内容</div>
+                        <img src="step9.png" alt="双击打开“XK”记事本文件，然后复制里面的全部内容，接着在输入服务器名或许可证文件内黏贴此内容" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">10</div>
+                    <div class="step-content">
+                        <div class="step-title">选择软件语言，然后下一步</div>
+                        <img src="step10.png" alt="选择软件语言，然后下一步" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">11</div>
+                    <div class="step-content">
+                        <div class="step-title">点击安装，开始安装。10-30分钟</div>
+                        <img src="step11.png" alt="点击安装，开始安装。10-30分钟" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">12</div>
+                    <div class="step-content">
+                        <div class="step-title">点击完成</div>
+                        <img src="step12.png" alt="点击完成" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">13</div>
+                    <div class="step-content">
+                        <div class="step-title">点击左下角的开始菜单栏，然后找到Siemens NX 10.0文件夹，点开来，找到NX10.0图标，按住鼠标左键不要松开，将这个快捷方式拖到桌面上</div>
+                        <img src="step13.png" alt="点击左下角的开始菜单栏，然后找到Siemens NX 10.0文件夹，点开来，找到NX10.0图标，按住鼠标左键不要松开，将这个快捷方式拖到桌面上" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">14</div>
+                    <div class="step-content">
+                        <div class="step-title">找到桌面上的图标，右键打开文件夹位置</div>
+                        <img src="step14.png" alt="找到桌面上的图标，右键打开文件夹位置" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">15</div>
+                    <div class="step-content">
+                        <div class="step-title">点击箭头所指的NX10.0文件夹</div>
+                        <img src="step15.png" alt="点击箭头所指的NX10.0文件夹" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">16</div>
+                    <div class="step-content">
+                        <div class="step-title">找到左边的是解压出来的文件夹的NX10.0里面的全部子文件复制，黏贴到右边安装路径内的NX10.0文件夹内。路径一定不要错！</div>
+                        <img src="step16.png" alt="找到左边的是解压出来的文件夹的NX10.0里面的全部子文件复制，黏贴到右边安装路径内的NX10.0文件夹内。路径一定不要错！" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">17</div>
+                    <div class="step-content">
+                        <div class="step-title">替换目标中的文件(R)</div>
+                        <img src="step17.png" alt="替换目标中的文件(R)" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">18</div>
+                    <div class="step-content">
+                        <div class="step-title">找到桌面上的图标，双击打开</div>
+                        <img src="step18.png" alt="找到桌面上的图标，双击打开" class="step-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="step-number">19</div>
+                    <div class="step-content">
+                        <div class="step-title">第一次打开会有此提示，点取消就行。/</div>
+                        <img src="step19.png" alt="第一次打开会有此提示，点取消就行。" class="step-img" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 免责声明板块 -->
+        <div class="section disclaimer">
+            <div class="section-title">四、免责声明</div>
+            <div class="section-content disclaimer-content">
+                软件资源均来源于网络，仅供用户交流学习与研究使用，版权归属原版权方所有，版权争议与本公众号无关，用户本人下载后不能用作商业或非法用途，否则后果均由用户承担责任；如果您访问和下载此文件，表示您同意只将此软件用于参考、学习而非其他用途，否则一切后果请您自行承担，请于下载后24小时内删除，不允许用于商业用途，否则法律问题自行承担。如果您喜欢该软件，请支持正版软件，购买注册，得到更好的正版服务。
+            </div>
+        </div>
+    </div>
+</body>
+</html>
